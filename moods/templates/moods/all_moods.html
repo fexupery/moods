@@ -1,0 +1,27 @@
+{% extends 'moods/base.html' %}
+{% block content %}
+
+<div class="container">
+  <!-- Content here -->
+
+<h1 class="text-success text-center">My Mood</h1>
+<h6 class="text-muted text-center">These are my every day mood</h6>
+
+<br/>
+<br/>
+
+{% for mood in moods %}
+<div class="media">
+  <img src="{{ mood.image.url }}" class="mr-3" width="45" height="45">
+  <div class="media-body">
+    {{ mood.date}}
+    <h5 class="mt-0 text-primary">{{ mood.title }}</h5>
+    {{ mood.description }}
+  </div>
+</div>
+<br/>
+
+{% endfor %}
+
+{% endblock %}
+</div>
